@@ -2,13 +2,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
-from items.src import items_registry
-from app.src import base_registry
+
 
 app = Flask(__name__)
 
 app.config.from_object(Config)
 db = SQLAlchemy(app)
+
+from items.src import items_registry
+from app.src import base_registry
 
 
 base_registry(app)

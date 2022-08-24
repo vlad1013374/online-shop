@@ -1,7 +1,7 @@
 from flask import render_template, redirect, request
+from items.items_service import ItemsService
 
 def items_registry(app):
-    from items.items_service import ItemsService
     items_service = ItemsService()
 
     @app.route('/items/buy/<int:id>')

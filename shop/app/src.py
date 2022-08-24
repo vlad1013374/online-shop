@@ -1,8 +1,8 @@
 from flask import render_template
+from items.items_service import ItemsService
 
 
 def base_registry(app):
-    from items.items_service import ItemsService
     items_service = ItemsService()
 
     @app.route('/')
