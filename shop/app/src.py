@@ -2,11 +2,12 @@ from flask import render_template
 
 
 def base_registry(app):
-    from items.items_model import Item
+    from items.items_service import ItemsService
+    items_service = ItemsService()
 
     @app.route('/')
     def index():
-        items = Item.query.order_by(Item.price).all()
+        items = items_service.get_all_items()
         return render_template('index.html', items=items)
 
     @app.route('/about')
