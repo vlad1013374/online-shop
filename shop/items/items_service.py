@@ -1,4 +1,5 @@
 from items.items_model import Item
+from main import db
 
 class ItemsService:
     def __init__(self):
