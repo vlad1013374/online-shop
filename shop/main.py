@@ -3,7 +3,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from items.src import items_registry
-from src import base_registry
+from app.src import base_registry
 
 app = Flask(__name__)
 
